@@ -1,0 +1,1 @@
+python main.py --data_path movie --model_name='CLCRec' --l_r=0.001 --reg_weight=0.1 --num_workers=4 --num_neg=128 --lr_lambda=0.5 --temp_value=2.0 --num_sample=0.5 --has_t=False --has_a=False --has_v=True

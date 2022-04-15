@@ -67,6 +67,7 @@ def data_load(dataset, has_v=True, has_a=True, has_t=True):
         num_item = 4919
         num_warm_item = 4182
         v_feat = torch.tensor(np.load(dir_str+'/feat_v.npy', allow_pickle=True), dtype=torch.float).cuda()
+        # v_feat = torch.tensor(np.load(dir_str+'/rand_v.npy', allow_pickle=True), dtype=torch.float).cuda()
         a_feat = None
         t_feat = None
 
