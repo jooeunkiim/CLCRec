@@ -46,7 +46,7 @@ def full_accuracy(val_data, all_index_of_rank_list, user_item_inter, is_training
             items = set(items_list)
             num_hit = len(pos_items.intersection(items))
             precision += float(num_hit / topk)
-            recall += float(num_hit / num_pos)
+            recall += float(num_hit / min(topk, num_pos))
             ndcg_score = 0.0
             max_ndcg_score = 0.0
             for i in range(min(num_hit, topk)):
@@ -71,7 +71,7 @@ def full_accuracy(val_data, all_index_of_rank_list, user_item_inter, is_training
             num_hit = len(pos_items.intersection(items))
             sum_num_hit += num_hit
             precision += float(num_hit / topk)
-            recall += float(num_hit / num_pos)
+            recall += float(num_hit / min(topk, num_pos))
             ndcg_score = 0.0
             max_ndcg_score = 0.0
             for i in range(min(num_pos, topk)):

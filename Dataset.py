@@ -66,11 +66,31 @@ def data_load(dataset, has_v=True, has_a=True, has_t=True):
         num_user = 29287
         num_item = 4919
         num_warm_item = 4182
-        v_feat = torch.tensor(np.load(dir_str+'/feat_v.npy', allow_pickle=True), dtype=torch.float).cuda()
-        # v_feat = torch.tensor(np.load(dir_str+'/rand_v.npy', allow_pickle=True), dtype=torch.float).cuda()
+        # v_feat = torch.tensor(np.load(dir_str+'/feat_v.npy', allow_pickle=True), dtype=torch.float).cuda()
+        v_feat = torch.tensor(np.load(dir_str+'/rand_v.npy', allow_pickle=True), dtype=torch.float).cuda()
         a_feat = None
         t_feat = None
 
+    elif dataset == 'ours':
+        num_user = 29281
+        num_item = 5040
+        num_warm_item = 4284
+        v_feat = torch.tensor(np.load(dir_str+'/rand_v.npy', allow_pickle=True), dtype=torch.float).cuda()
+        a_feat = None
+        t_feat = None
+
+    elif dataset == 'www':
+        num_user = 28541
+        num_item = 4953
+        num_warm_item = 4198
+        v_feat = None
+        # v_feat = torch.tensor(np.load(dir_str+'/feat_v.npy', allow_pickle=True), dtype=torch.float).cuda()
+        a_feat = None
+        t_feat = torch.tensor(np.load(dir_str+'/feat_t.npy', allow_pickle=True), dtype=torch.float).cuda()
+        # t_feat = None
+        # t_feat = torch.tensor(np.load(dir_str+'/rand_v.npy', allow_pickle=True), dtype=torch.float).cuda()
+        
+        
     return num_user, num_item, num_warm_item, train_data, val_data, val_warm_data, val_cold_data, test_data, test_warm_data, test_cold_data, v_feat, a_feat, t_feat
 
 

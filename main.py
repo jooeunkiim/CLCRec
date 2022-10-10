@@ -149,12 +149,13 @@ if __name__ == '__main__':
             if num_decreases > 5:
                 with open('./Data/'+data_path+'/result_{0}.txt'.format(save_file_name), 'a') as save_file:
                     save_file.write(str(args))
-                    save_file.write('\r\n-----------Val Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_val_result[0], max_val_result[1], max_val_result[2]))
-                    save_file.write('\r\n-----------Val Warm Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_val_result_warm[0], max_val_result_warm[1], max_val_result_warm[2]))
-                    save_file.write('\r\n-----------Val Cold Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_val_result_cold[0], max_val_result_cold[1], max_val_result_cold[2]))
-                    save_file.write('\r\n-----------Test Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_test_result[0], max_test_result[1], max_test_result[2]))
-                    save_file.write('\r\n-----------Test Warm Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_test_result_warm[0], max_test_result_warm[1], max_test_result_warm[2]))
-                    save_file.write('\r\n-----------Test Cold Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_test_result_cold[0], max_test_result_cold[1], max_test_result_cold[2]))
+                    save_file.write('\r\n-----------Val Precision:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_val_result[0], max_val_result[1], max_val_result[2]))
+                    save_file.write('\r\n-----------Val Warm Precision:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_val_result_warm[0], max_val_result_warm[1], max_val_result_warm[2]))
+                    save_file.write('\r\n-----------Val Cold Precision:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_val_result_cold[0], max_val_result_cold[1], max_val_result_cold[2]))
+                    
+                    # save_file.write('\r\n-----------Test Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_test_result[0], max_test_result[1], max_test_result[2]))
+                    # save_file.write('\r\n-----------Test Warm Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_test_result_warm[0], max_test_result_warm[1], max_test_result_warm[2]))
+                    # save_file.write('\r\n-----------Test Cold Precition:{0:.4f} Recall:{1:.4f} NDCG:{2:.4f}-----------'.format(max_test_result_cold[0], max_test_result_cold[1], max_test_result_cold[2]))
                 break
             else:
                 num_decreases += 1

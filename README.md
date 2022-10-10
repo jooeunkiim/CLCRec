@@ -45,6 +45,10 @@ The instruction of commands has been clearly stated in the codes.
 - Amazon dataset  
 `python main.py --model_name='CLCRec' --data_path=amazon --l_r=0.001 --reg_weight=0.001 --num_workers=4 --num_neg=512 --has_v=True --lr_lambda=0.9 --num_sample=0.5`  
 
+
+- www dataset  
+`python main.py --model_name='CLCRec' --l_r=0.001 --reg_weight=0.1 --num_workers=4 --num_neg=128 --has_a=True --has_t=True --has_v=True --lr_lambda=0.5 --temp_value=2.0 --num_sample=0.5  --data_path=www_movielens` 
+
 Some important arguments:  
 
 
