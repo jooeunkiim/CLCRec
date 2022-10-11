@@ -79,15 +79,15 @@ def data_load(dataset, has_v=True, has_a=True, has_t=True):
         a_feat = None
         t_feat = None
 
-    elif dataset == 'www':
+    elif dataset == 'www_movielens':
         num_user = 28541
         num_item = 4953
         num_warm_item = 4198
-        v_feat = None
-        # v_feat = torch.tensor(np.load(dir_str+'/feat_v.npy', allow_pickle=True), dtype=torch.float).cuda()
+        # v_feat = None
+        v_feat = torch.tensor(np.load(dir_str+'/feat_v.npy', allow_pickle=True), dtype=torch.float).cuda()
         a_feat = None
-        t_feat = torch.tensor(np.load(dir_str+'/feat_t.npy', allow_pickle=True), dtype=torch.float).cuda()
-        # t_feat = None
+        # t_feat = torch.tensor(np.load(dir_str+'/feat_t.npy', allow_pickle=True), dtype=torch.float).cuda()
+        t_feat = None
         # t_feat = torch.tensor(np.load(dir_str+'/rand_v.npy', allow_pickle=True), dtype=torch.float).cuda()
         
         
